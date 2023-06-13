@@ -1,0 +1,37 @@
+.sidebar {
+width: 200px;
+height: 100vh;
+background-color: #f1f1f1;
+padding: 60px;
+width: 150px;
+position: absolute;
+align-items: center;
+left: 0;
+top: 0;
+}
+
+.sidebar button {
+  margin-top: 200px;
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+display: block;
+}
+
+.sidebar button:not(:first-child) {
+  margin-top: 40px;
+}
+
+.sidebar button:hover {
+  background-color: #ccc;
+}
+
+.body-text {
+margin-left: 260px;
+}
+
+.header {
+  width:100%;
+  justify-content: center;
+}

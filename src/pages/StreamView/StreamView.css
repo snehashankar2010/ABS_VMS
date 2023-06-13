@@ -1,0 +1,29 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align buttons in the center */
+}
+
+
+.sidebar button {
+  margin-top: 70px; /* Added margin-top for spacing */
+  width: 100%; /* Added width for even spacing */
+  padding: 20px 20px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #ccc;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
