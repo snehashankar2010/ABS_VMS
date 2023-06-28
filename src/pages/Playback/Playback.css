@@ -1,0 +1,199 @@
+.sidebar {
+  width: 200px;
+  height: 94vh;
+  background-color: #9bd3ff30;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar button {
+  margin-top: 70px;
+  width: 100%;
+  padding: 20px 20px;
+  background-color: #337ab7c9;
+  border: none;
+  font-size:17px;
+  font-family:monaco, monospace;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #337ab78c;
+}
+
+.video-monitoring-system {
+  display: flex;
+ height: 88vh;
+}
+.menu-bar {
+  background-color:#9bd3ff30;
+  flex: 0 0 275px;
+  padding: 15px;
+  display: flex;
+  border-radius: 25px;
+  margin-top:-60px;
+  margin-bottom:20px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.menu-bar > div {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.menu-bar > div:not(:last-child):after {
+  content: "";
+  position: absolute;
+   bottom: 5px;
+  width: 100%;
+  height: 1.5px;
+  background-color: black;
+}
+
+.selection-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap:40px;
+  padding:10px 0px 0px 10px; 
+}
+.selection-section select{
+ width: 100%;
+ height:35px;
+ border-radius: 5px;
+ font-size: 17px;
+ margin-top:30px;
+ margin-bottom:40px;
+}
+
+.selection-section span {
+  text-align: left;
+  font-size: 19px;
+
+  display: block;
+}
+
+.selection-section div {
+  display: flex;
+  align-items: center;
+  gap:15px;
+}
+
+.selection-section input {
+  width: 70%;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.button-section button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-family:monaco, monospace;
+  cursor: pointer;
+   background-color: #337ab7c9;
+}
+.button-section button:hover {
+  background-color: #337ab78c;
+}
+
+.video-monitoring-container {
+  display: relative;
+}
+
+.video-playback-shell {
+  position: absolute;
+  top: 10%;
+  left:270px;
+  right:0px;
+  display: flex; 
+}
+
+.video-playback-shell video {
+  width: 72%;
+   height: 450px;
+}
+
+.database-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius:15px;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-family:monaco, monospace;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.database-table th {
+  background-color:#337ab7;
+  color: white;
+  font-size: 1.1em;
+}
+
+.database-table td {
+  color: rgb(0, 0, 0);
+  background-color:#9bd3ff1c;
+  font-size: 20x;
+  padding: 15px;
+}
+
+.navigation-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.page-count {
+  font-size: 14px;
+  color: gray;
+}
+
+.page-navigation-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.page-navigation-arrows button {
+  margin-right: 5px;
+  padding: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  color: gray;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.current-page {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.refresh-button button {
+  padding: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  color: gray;
+  font-size: 14px;
+  cursor: pointer;
+}

@@ -1,28 +1,198 @@
 .sidebar {
   width: 200px;
-  height: 100vh;
-  background-color: #f1f1f1;
+  height: 94vh;
+  background-color: #9bd3ff30;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align buttons in the center */
+  align-items: center;
 }
 
 .sidebar button {
-  margin-top: 70px; /* Added margin-top for spacing */
-  width: 100%; /* Added width for even spacing */
+  margin-top: 70px;
+  width: 100%;
   padding: 20px 20px;
-  background-color: #ddd;
+ background-color: #337ab7c9;
+  color:white;
   border: none;
+  font-size:17px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .sidebar button:hover {
-  background-color: #ccc;
+  background-color: #337ab78c;
 }
 
-.content {
-  margin-left: 220px;
-  padding: 20px;
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52%;
+  height:30px;
+  background-color: #9bd3ff30; 
+  padding:4px;
+  margin-bottom:5px;
+  margin-left:280px;
+  border-radius: 5px;
+}
+
+.row select{
+ width: 30%;
+  height:25px;
+   border-radius: 5px;
+}
+
+.snapshot-button {
+  background-color: transparent; 
+  height:30px;
+  width:40px;
+  border: none;
+  cursor: pointer;
+ color:#003e54;
+}
+
+.video-controls {
+  position: absolute;
+  top: 10%;
+  right: 50px;
+  display: flex;
+  height: 85%;
+  flex-direction: column;
+  margin-bottom:0px;
+}
+
+.controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:10px;
+  padding:0px 0px 10px 0px;
+  border-bottom: 3px solid #ddd;
+}
+
+.button-group {
+  display: flex;
+}
+
+.button-group button {
+  width: 100px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 5px;
+  color:#003e54;
+  border: none;
+  background-color:#9bd3ff30;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.ID-controls {
+  margin-bottom:-12px;
+}
+
+.ID-controls .button-group {
+   display: grid;
+  grid-template-columns: 1.4fr 0.9fr 0.1fr;
+ 
+}
+
+.ID-controls p {
+  font-size: 20px;
+  font-family:monaco, monospace;
+  color:#030e70;
+}
+
+.ID-controls .button-group button {
+  width: 90px;
+  height: 35px;
+  font-size: 25px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #ddd;
+}
+
+.dropdown p {
+  font-size: 22px; 
+  font-family:monaco, monospace;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color:#030e70;
+}
+
+.dropdown .dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.dropdown .arrow-icon {
+  transition: transform 0.3s ease-in-out;
+ color:#030e70;
+}
+
+.dropdown .arrow-icon.down {
+  transform: rotate(-90deg);
+}
+
+.dropdown .range-input {
+  width: 310px;
+  height: 130px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family:monaco, monospace;
+  margin:5px; 
+ 
+}
+
+.range-input .slider {
+  display: flex; 
+  align-items: center;
+ color:#003e54;
+}
+
+.range-input .rc-slider-handle {
+  border-color: #007bff;
+}
+
+.range-input svg {
+  margin-right: 15px;
+}
+
+.dropdown .preset-input {
+  width: 310px;
+  height: 100px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family:monaco, monospace;
+  margin:5px; 
+}
+
+.preset-input input
+{
+  font-size:20px;
+   font-family:monaco, monospace;
+ margin-left: 35px;
+}
+
+.preset-input button {
+  width: 120px;
+  height: 40px;
+  font-size: 17px;
+   font-family:monaco, monospace;
+  border-radius: 5px;
+  border: none;
+  background-color: #9bd3ff30;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.preset-input .preset-button-actions {
+  gap: 50px;
 }

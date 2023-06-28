@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "ip": "192.168.0.103",
+    "port":8080,
+    "username":"s",
+    "password":"s",
+    "stream":"rtsp://s:s@192.168.0.103:8080/video/h264"
+  },
+  {
+    "id": 2,
+    "ip": "192.168.0.106",
+    "port":8080,
+    "username":"s",
+    "password":"s",
+    "stream": "rtsp://s:s@192.168.0.106:8080/video/h264"
+  },
+  {
+    "id": 3,
+    "ip": "192.168.0.104",
+    "port":8080,
+    "username":"s",
+    "password":"s",
+    "stream": "rtsp://s:s@192.168.0.104:8080/video/h264"
+  }
+]

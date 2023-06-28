@@ -5,7 +5,7 @@ import './VideoFeed.css';
 import 'video.js/dist/video-js.css';
 import deleteIcon from '../../assets/icon/delete.jpg';
 
-const VideoFeed = ({ src, onDelete }) => {
+const VideoFeed = ({ devices, onDelete }) => {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const playerRef = useRef(null);
@@ -23,21 +23,21 @@ const VideoFeed = ({ src, onDelete }) => {
   }, []);
 
   const handleViewStream = () => {
-    navigate(`/stream-view?src=${src}`);
+    navigate(`/stream-settings`, { state: { devices } });
   };
 
   return (
     <div className="dashboard-video-feed video-feed">
       <div data-vjs-player>
         <video ref={videoRef} className="dashboard-video-js video-js" controls autoPlay>
-          <source src={src} type="application/x-mpegURL" />
+          <source src={devices.stream} type="application/x-mpegURL" />
         </video>
       </div>
       <div className="delete-icon" onClick={onDelete}>
         <img src={deleteIcon} alt="Delete" />
       </div>
       <div>
-      <button className="view-stream" onClick={handleViewStream}>View Stream</button>
+      <button className="view-stream" onClick={handleViewStream}>ONVIF Settings</button>
      </div>
     </div>
   );

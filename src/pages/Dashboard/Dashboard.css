@@ -1,7 +1,17 @@
+.header {
+  width:70%;
+  justify-content: center;
+}
+.header h1
+{   
+    margin-block-end: 0.0em;
+    color:#030e70;
+    font-family:monaco, monospace;
+}
 .sidebar {
 width: 200px;
-height: 100vh;
-background-color: #f1f1f1;
+height: 94vh;
+  background-color: #9bd3ff30;
 padding: 60px;
 width: 150px;
 position: absolute;
@@ -13,8 +23,11 @@ top: 0;
 .sidebar button {
   margin-top: 200px;
   width: 100%;
-  background-color: #ddd;
+  background-color: #337ab7c9;
   border-radius: 5px;
+   border: none;
+  font-size:17px;
+   font-family:monaco, monospace;
   cursor: pointer;
 display: block;
 }
@@ -24,17 +37,15 @@ display: block;
 }
 
 .sidebar button:hover {
-  background-color: #ccc;
+  background-color: #337ab78c;
 }
 
 .body-text {
-margin-left: 260px;
+margin-left: 250px;
+ justify-content: center;
+  text-align: center;
 }
 
-.header {
-  width:100%;
-  justify-content: center;
-}
 .video-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

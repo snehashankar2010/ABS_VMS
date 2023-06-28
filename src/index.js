@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AddStream from "./pages/AddStream/AddStream";
-import StreamView from "./pages/StreamView/StreamView";
+import Playback from "./pages/Playback/Playback";
 import Settings from "./pages/Settings/Settings";
 
 ReactDOM.render(
@@ -18,7 +18,7 @@ ReactDOM.render(
           <Route path="login" element={<Login />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="add-stream" element={<AddStream />} />
-          <Route path="stream-view"element={<StreamView />}/>
+          <Route path="playback"element={<Playback/>}/>
           <Route path="stream-settings" element={<Settings />} />
         </Routes>
       </VideoSourcesProvider>
