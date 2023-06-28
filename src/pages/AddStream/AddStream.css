@@ -29,8 +29,9 @@
 .content input[type="password"], 
 .content input[type="number"]{
   width: 80%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 10px;
+  margin-left: 100px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -43,6 +44,7 @@
   background-color: #337ab7;
   font-family:monaco, monospace;
   font-size:15px;
+  margin-left: 100px;
   color: white;
   border: none;
   border-radius: 4px;

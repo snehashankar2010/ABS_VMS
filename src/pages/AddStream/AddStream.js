@@ -10,7 +10,7 @@ const AddStream = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [newVideoSource, setNewVideoSource] = useState(""); 
   const { addVideoSource } = useContext(VideoSourcesContext);
-  const [deviceInfo, setDeviceInfo] = useState({ip: '', username: '', password: '', port: ''}); 
+  const [deviceInfo, setDeviceInfo] = useState({name: '',ip: '', username: '', password: '', port: ''}); 
   const [devices, setDevices] = useState({});
 
   useEffect(() => {
@@ -85,9 +85,15 @@ const AddStream = () => {
       <div className="body-text">
         <div className="header">
           <h1>Add Stream</h1>
-        </div>
-        
+        </div>        
         <div className="content">
+        <input
+            type="text"
+            name="name"
+            value={deviceInfo.name}
+            onChange={handleDeviceInput}
+            placeholder="Camera Name"
+          />
           <input
             type="text"
             name="ip"
