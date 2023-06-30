@@ -1,57 +1,31 @@
-.sidebar {
-  width: 200px;
-  height: 94vh;
-  background-color: #9bd3ff30;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sidebar button {
-  margin-top: 70px;
-  width: 100%;
-  padding: 20px 20px;
-  background-color: #337ab7c9;
-  border: none;
-  font-size:17px;
-  font-family:monaco, monospace;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.sidebar button:hover {
-  background-color: #337ab78c;
-}
-
 .video-monitoring-system {
   display: flex;
  height: 88vh;
 }
 .menu-bar {
   background-color:#9bd3ff30;
-  flex: 0 0 275px;
-  padding: 15px;
+  flex: 0 0 20%;
+  padding: 1%;
   display: flex;
-  border-radius: 25px;
-  margin-top:-60px;
-  margin-bottom:20px;
+  border-radius: 2%;
+  margin-top:-7%;
+  margin-bottom:1%;
   flex-direction: column;
   justify-content: space-between;
   margin-left: auto;
 }
 
 .menu-bar > div {
-  margin-bottom: 25px;
+  margin-bottom: 90%;
   position: relative;
 }
 
 .menu-bar > div:not(:last-child):after {
   content: "";
   position: absolute;
-   bottom: 5px;
-  width: 100%;
-  height: 1.5px;
+   bottom: -70%;
+  width: 95%;
+  height: 0.6%;
   background-color: black;
 }
 
@@ -59,38 +33,37 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap:40px;
-  padding:10px 0px 0px 10px; 
+  gap:18%;
+  padding:5% 0% 0% 5%; 
 }
 .selection-section select{
  width: 100%;
- height:35px;
+ height:20%;
  border-radius: 5px;
- font-size: 17px;
- margin-top:30px;
- margin-bottom:40px;
+ font-size: 1em;
+ margin-top:10%;
+ margin-bottom:10%;
 }
 
 .selection-section span {
   text-align: left;
-  font-size: 19px;
-
+  font-size: 1.2em;
   display: block;
 }
 
 .selection-section div {
   display: flex;
   align-items: center;
-  gap:15px;
+  gap:5%;
 }
 
 .selection-section input {
-  width: 70%;
-  height: 35px;
+  width: 80%;
+  height: 50%;
   border-radius: 5px;
-  font-size: 17px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 1.2em;
+  margin-top: 12%;
+  margin-bottom: 12%;
 }
 
 .button-section {
@@ -100,50 +73,47 @@
 }
 
 .button-section button {
-  margin-top: 10px;
+  margin-top: 5%;
   width: 100%;
-  padding: 10px;
+  padding: 5%;
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 16px;
+  font-size: 1em;
   font-family:monaco, monospace;
   cursor: pointer;
    background-color: #337ab7c9;
 }
+
 .button-section button:hover {
   background-color: #337ab78c;
 }
-
-.video-monitoring-container {
-  display: relative;
+.video-monitoring-system{
+  height:600px;
 }
 
 .video-playback-shell {
   position: absolute;
   top: 10%;
-  left:270px;
-  right:0px;
+  left:20%;
+  right:10%;
   display: flex; 
 }
 
 .video-playback-shell video {
-  width: 72%;
-   height: 450px;
+  width: 78%;
 }
 
 .database-table {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-radius:15px;
+  height:25%;
   margin-top: auto;
   margin-bottom: 0;
-  font-family:monaco, monospace;
-  margin-right: 15px;
   overflow: hidden;
+  overflow-y: auto;
 }
-
 .database-table th {
   background-color:#337ab7;
   color: white;
@@ -153,19 +123,17 @@
 .database-table td {
   color: rgb(0, 0, 0);
   background-color:#9bd3ff1c;
-  font-size: 20x;
-  padding: 15px;
+  font-size: 1em;
+  padding: 1%;
 }
 
 .navigation-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
+  display: flex; 
+  align-items: center; 
+ justify-content: space-between;
 }
-
 .page-count {
-  font-size: 14px;
+  font-size: 1em;
   color: gray;
 }
 
@@ -180,20 +148,57 @@
   border: none;
   background-color: #f0f0f0;
   color: gray;
-  font-size: 14px;
+  font-size: 1em;
   cursor: pointer;
 }
 
 .current-page {
   margin: 0 10px;
-  font-size: 14px;
+  font-size: 1em;
 }
 
+
 .refresh-button button {
-  padding: 5px;
+  padding: -5%;
   border: none;
   background-color: #f0f0f0;
   color: gray;
-  font-size: 14px;
+  font-size: 1em;
   cursor: pointer;
+}
+
+.download-button button {
+  padding: 15%;
+  border: none;
+  background-color: #f0f0f0;
+  color: gray;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10%; /* Added margin-left */
+}
+
+.footer-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.footer-button-container button {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1100px) {
+.video-playback-shell video {
+  margin-left:-3%;
+ margin-top:11%;
+ }
+.database-table th {
+  font-size: 0.8em;
+}
+
+.database-table td {
+  font-size: 0.8em;
+}
 }

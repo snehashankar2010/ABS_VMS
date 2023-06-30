@@ -129,12 +129,24 @@ const Playback = () => {
     }
   };
 
+  const handleDownload = () => {
+    // Filter the selected videos from tableData
+    const selectedVideos = tableData.filter((item) => selectedRows.includes(item.id));
+    // Perform the download action with the selected videos
+    selectedVideos.forEach((video) => {
+      const url = `/api/download/${video.videoName}`;
+      window.open(url, '_blank');
+    });
+  };
+
   return (
     <div>
       <div className="sidebar">
+      <img src={logo}></img>
         <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
         <button onClick={() => handleNavigation("/playback")}>Playback</button>
         <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
+        <button onClick={() => handleNavigation("/video-analytics")}>Video Analytics</button>
         <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
@@ -223,6 +235,9 @@ const Playback = () => {
                   <button onClick={handleRefresh} disabled={selectedRows.length === 0}>
                     Refresh
                   </button>
+                  <button onClick={handleDownload} disabled={selectedRows.length === 0}>
+                    Download
+                  </button>
                 </div>
               </div>
             </div>
@@ -255,7 +270,11 @@ const Playback = () => {
               </button>
             </div>
           </div>
-          
+        </div>
+      </div>
+      <div className="footer">
+        <div className="copyright">
+          &copy; 2023 Arcturus Business Solutions
         </div>
       </div>
     </div>

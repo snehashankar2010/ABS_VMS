@@ -76,9 +76,11 @@ const AddStream = () => {
   return (
     <div>
       <div className="sidebar">
+      <img src={logo}></img>
         <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
         <button onClick={() => handleNavigation("/playback")}>Playback</button>
         <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
+        <button onClick={() => handleNavigation("/video-analytics")}>Video Analytics</button>
         <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
@@ -126,14 +128,19 @@ const AddStream = () => {
         <div className="add">
           <button onClick={handleAddVideoSrc}>Connect</button>
         </div>   
-        {devices.ip && devices.port && (
-          <div>
-            <h2>Connected to Device: {devices.ip}:{devices.port}</h2>
-          </div>
-        )}
         <br></br>
         <div className="add">
           <button onClick={handleAddVideoSource}>Add Video Source</button>
+        </div>
+        {devices.ip && devices.port && (
+          <div className="connected">
+            <h2>Connected to Device: {devices.ip}:{devices.port}</h2>
+          </div>
+        )}
+      </div>
+      <div className="footer">
+        <div className="copyright">
+          &copy; 2023 Arcturus Business Solutions
         </div>
       </div>
     </div>

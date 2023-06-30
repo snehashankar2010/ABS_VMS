@@ -17,10 +17,10 @@
   },
   {
     "id": 3,
-    "ip": "192.168.0.104",
+    "ip": "192.168.0.109",
     "port":8080,
-    "username":"s",
-    "password":"s",
+    "username":"",
+    "password":"",
     "stream": "rtsp://s:s@192.168.0.104:8080/video/h264"
   }
 ]

@@ -207,9 +207,11 @@ useEffect(() => {
     return (
       <div>
         <div className="sidebar">
+        <img src={logo}></img>
           <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
           <button onClick={() => handleNavigation("/playback")}>Playback</button>
           <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
+          <button onClick={() => handleNavigation("/video-analytics")}>Video Analytics</button>
           <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
           <button onClick={handleLogout}>Logout</button>
         </div>
@@ -230,7 +232,7 @@ useEffect(() => {
           ))}
         </select>
         <button className="snapshot-button" onClick={handleSnapshot}>
-          <FiCamera size={27} />
+          <FiCamera />
         </button>
       </div> 
 
@@ -334,19 +336,19 @@ useEffect(() => {
           {showDropdown[0] && (
             <div className="range-input">
               <div className="slider" title="Brightness">
-              <FiSun  size={32}/>
+              <FiSun />
               <Slider min={0} max={100} value={brightness} onChange={(value) => handleSliderChange(value, "brightness")} />
               </div>
               <div className="slider"  title="Saturation"> 
-              <FiLayers size={32}/>
+              <FiLayers />
               <Slider min={0} max={100} value={saturation} onChange={(value) => handleSliderChange(value, "saturation")} />
               </div>
               <div className="slider" title="Contrast">
-              <MdContrast size={32}/>
+              <MdContrast />
               <Slider min={0} max={100} value={contrast} onChange={(value) => handleSliderChange(value, "contrast")} />
               </div>
               <div className="slider" title="Sharpness">
-              <MdExposure size={32}/>
+              <MdExposure />
               <Slider min={0} max={100} value={sharpness} onChange={(value) => handleSliderChange(value, "sharpness")} />
               </div>
             </div>
@@ -377,7 +379,11 @@ useEffect(() => {
               </div>
           )}
         </div>
-
+      </div>
+      <div className="footer">
+        <div className="copyright">
+          &copy; 2023 Arcturus Business Solutions
+        </div>
       </div>
     </div>
     );

@@ -23,7 +23,6 @@ function connectToDevice(ip, port, username, password, callback) {
     username: username,
     password: password
   });
-
   cam.connect((err, camera, stream, xml) => {
     if (err) {
       console.error('Error connecting to the device:', err);
@@ -165,7 +164,6 @@ const initialSetup = async (req, res) => {
         console.log('Stream URI:', streamUrl);
 
         res.json({
-          name: cam.name,
           ip: cam.hostname,
           username: cam.username,
           password: cam.password,

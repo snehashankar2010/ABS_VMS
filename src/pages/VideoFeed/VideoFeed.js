@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import videojs from 'video.js';
 import './VideoFeed.css';
@@ -11,9 +11,13 @@ const VideoFeed = ({ devices, onDelete }) => {
   const playerRef = useRef(null);
 
   useEffect(() => {
-    playerRef.current = videojs(videoRef.current, {}, () => {
-      console.log('player is ready');
-    });
+    try {
+      playerRef.current = videojs(videoRef.current, {}, () => {
+        console.log('player is ready');
+      });
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
 
     return () => {
       if (playerRef.current) {
@@ -37,8 +41,8 @@ const VideoFeed = ({ devices, onDelete }) => {
         <img src={deleteIcon} alt="Delete" />
       </div>
       <div>
-      <button className="view-stream" onClick={handleViewStream}>ONVIF Settings</button>
-     </div>
+        <button className="view-stream" onClick={handleViewStream}>ONVIF Settings</button>
+      </div>
     </div>
   );
 };
