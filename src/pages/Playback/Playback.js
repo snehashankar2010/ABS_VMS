@@ -13,11 +13,11 @@ const Playback = () => {
   const [endDate, setEndDate] = useState('');
   const [showTable, setShowTable] = useState(false);
   const [selectedRows, setSelectedRows] = useState([]);
-  const [selectedPlaybackRows, setSelectedPlaybackRows] = useState([]);
+  const [selectedPlaybackRow, setSelectedPlaybackRow] = useState(null); // New state for selected playback row
   const [currentPage, setCurrentPage] = useState(1);
   const [cameraList, setCameraList] = useState([]);
   const [tableData, setTableData] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null); // New state for selected video
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('authenticated');
@@ -81,15 +81,14 @@ const Playback = () => {
     setStartDate('');
     setEndDate('');
     setSelectedRows([]);
-    setSelectedPlaybackRows([]);
+    setSelectedPlaybackRow(null); // Reset selected playback row
     setCurrentPage(1);
     setShowTable(false);
-    setSelectedVideo(null); // Reset selected video
+    setSelectedVideo(null);
   };
 
   const handleSubmit = () => {
     if (cameraId && startDate && endDate) {
-      // Fetch dummy data for the selected camera ID from API
       fetchDummyData(cameraId).then((data) => {
         setTableData(data);
         setShowTable(true);
@@ -106,8 +105,8 @@ const Playback = () => {
 
   const handleRefresh = () => {
     setSelectedRows([]);
-    setSelectedPlaybackRows([]);
-    setSelectedVideo(null); // Reset selected video
+    setSelectedPlaybackRow(null); // Reset selected playback row
+    setSelectedVideo(null);
   };
 
   const handleRowDownload = (event, row) => {
@@ -119,15 +118,13 @@ const Playback = () => {
   };
 
   const handlePlaybackRowSelect = (event, row) => {
-    setSelectedPlaybackRows([row]);
+    setSelectedPlaybackRow(row === selectedPlaybackRow ? null : row); // Toggle selected playback row
     setSelectedRows([]);
-    setSelectedVideo(row === selectedPlaybackRows[0] ? null : row); // Toggle selected video
+    setSelectedVideo(row === selectedPlaybackRow ? null : row);
   };
 
   const handleDownload = () => {
-    // Filter the selected videos from tableData
     const selectedVideos = tableData.filter((item) => selectedRows.includes(item.id));
-    // Perform the download action with the selected videos
     selectedVideos.forEach((video) => {
       const url = `/api/download/${video.videoName}`;
       window.open(url, '_blank');
@@ -182,7 +179,7 @@ const Playback = () => {
                     .map((item) => (
                       <tr
                         key={item.id}
-                        className={selectedPlaybackRows.includes(item) ? 'highlighted-row' : ''}
+                        className={selectedPlaybackRow === item ? 'highlighted-row' : ''}
                         onClick={(event) => handlePlaybackRowSelect(event, item)}
                       >
                         <td>{item.id}</td>
@@ -221,7 +218,7 @@ const Playback = () => {
                   </button>
                 </div>
                 <div className="refresh-button">
-                  <button onClick={handleRefresh} disabled={selectedRows.length === 0 && selectedPlaybackRows.length === 0}>
+                  <button onClick={handleRefresh} disabled={selectedRows.length === 0 && !selectedPlaybackRow}>
                     Refresh
                   </button>
                   <button onClick={handleDownload} disabled={selectedRows.length === 0}>
