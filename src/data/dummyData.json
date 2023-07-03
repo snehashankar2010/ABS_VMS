@@ -2,7 +2,7 @@
   {
     "id": 1,
     "cameraId": 1,
-    "size": "Small",
+    "size": "30mb",
     "timestamps": "2023-06-01 09:00 AM",
     "streamLength": "00:30:00",
     "videoName": "video1.mp4"
@@ -10,7 +10,7 @@
   {
     "id": 2,  
     "cameraId": 2,
-    "size": "Medium",
+    "size": "40gb",
     "timestamps": "2023-06-02 12:30 PM",
     "streamLength": "00:45:00",
     "videoName": "video2.mp4"
@@ -18,23 +18,23 @@
   {
     "id": 3,
     "cameraId": 1,
-    "size": "Large",
+    "size": "90mb",
     "timestamps": "2023-06-03 03:45 PM",
     "streamLength": "01:15:00",
     "videoName": "video3.mp4"
   },
   {
-    "id": 1,
+    "id": 4,
     "cameraId": 1,
-    "size": "Small",
+    "size": "97mb",
     "timestamps": "2023-06-12 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 1,
+    "id": 5,
     "cameraId": 1,
-    "size": "Small",
+    "size": "18mb",
     "timestamps": "2023-06-19 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
@@ -42,47 +42,47 @@
   {
     "id": 1,
     "cameraId": 2,
-    "size": "Small",
+    "size": "60gb",
     "timestamps": "2023-06-23 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 1,
+    "id": 6,
     "cameraId": 3,
-    "size": "Small",
+    "size": "53mb",
     "timestamps": "2023-06-09 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 2,
+    "id": 7,
     "cameraId": 1,
-    "size": "Small",
+    "size": "68gb",
     "timestamps": "2023-06-10 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 3,
+    "id": 8,
     "cameraId": 3,
-    "size": "Small",
+    "size": "20mb",
     "timestamps": "2023-06-14 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 4,
+    "id": 9,
     "cameraId": 3,
-    "size": "Small",
+    "size": "99gb",
     "timestamps": "2023-06-26 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"
   },
   {
-    "id": 1,
+    "id": 10,
     "cameraId": 1,
-    "size": "Small",
+    "size": "89mb",
     "timestamps": "2023-06-27 08:15 AM",
     "streamLength": "00:25:00",
     "videoName": "video4.mp4"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import logo from "../../assets/imgs/logo.png";
+import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/imgs/logo.png';
 import './Playback.css';
 import { fetchCameraList, fetchDummyData } from '../../data/json-lists';
 import video from '../../data/Video2.mp4';
@@ -19,10 +19,9 @@ const Playback = () => {
   const [tableData, setTableData] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null); // New state for selected video
 
-
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("authenticated");
-    setAuthenticated(loggedInUser === "true");
+    const loggedInUser = localStorage.getItem('authenticated');
+    setAuthenticated(loggedInUser === 'true');
     fetchCameraList().then((data) => {
       setCameraList(data);
     });
@@ -33,13 +32,13 @@ const Playback = () => {
   };
 
   const handleLogout = () => {
-    localStorage.setItem("authenticated", false);
+    localStorage.setItem('authenticated', false);
     setAuthenticated(false);
-    navigate("/login");
+    navigate('/login');
   };
 
   if (!authenticated) {
-    navigate("/login", { replace: true });
+    navigate('/login', { replace: true });
     return null;
   }
 
@@ -108,6 +107,7 @@ const Playback = () => {
   const handleRefresh = () => {
     setSelectedRows([]);
     setSelectedPlaybackRows([]);
+    setSelectedVideo(null); // Reset selected video
   };
 
   const handleRowDownload = (event, row) => {
@@ -119,14 +119,9 @@ const Playback = () => {
   };
 
   const handlePlaybackRowSelect = (event, row) => {
-    if (event.target.checked) {
-      setSelectedPlaybackRows([row]);
-      setSelectedRows([]);
-      setSelectedVideo(row); // Set selected video
-    } else {
-      setSelectedPlaybackRows([]);
-      setSelectedVideo(null); // Reset selected video
-    }
+    setSelectedPlaybackRows([row]);
+    setSelectedRows([]);
+    setSelectedVideo(row === selectedPlaybackRows[0] ? null : row); // Toggle selected video
   };
 
   const handleDownload = () => {
@@ -142,22 +137,21 @@ const Playback = () => {
   return (
     <div>
       <div className="sidebar">
-      <img src={logo}></img>
-        <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
-        <button onClick={() => handleNavigation("/playback")}>Playback</button>
-        <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
-        <button onClick={() => handleNavigation("/video-analytics")}>Video Analytics</button>
-        <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
+        <img src={logo} alt="Logo" />
+        <button onClick={() => handleNavigation('/dashboard')}>Dashboard</button>
+        <button onClick={() => handleNavigation('/playback')}>Playback</button>
+        <button onClick={() => handleNavigation('/add-stream')}>Add Stream</button>
+        <button onClick={() => handleNavigation('/video-analytics')}>Video Analytics</button>
+        <button onClick={() => handleNavigation('/stream-settings')}>ONVIF Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
       <div className="body-text">
         <div className="header">
-          <h1>Playback</h1><br></br>
+          <h1>Playback</h1>
+          <br />
         </div>
         <div className="video-monitoring-system">
-
-          
-        {showTable && (
+          {showTable && (
             <div className="video-playback-shell">
               {selectedVideo ? (
                 <video controls>
@@ -169,7 +163,7 @@ const Playback = () => {
             </div>
           )}
 
-        {showTable && (
+          {showTable && (
             <div className="database-table">
               <table>
                 <thead>
@@ -179,7 +173,6 @@ const Playback = () => {
                     <th>Time Stamps</th>
                     <th>Stream Length</th>
                     <th>Video Name</th>
-                    <th>Playback</th>
                     <th>Download</th>
                   </tr>
                 </thead>
@@ -187,20 +180,16 @@ const Playback = () => {
                   {tableData
                     .slice((currentPage - 1) * 5, currentPage * 5)
                     .map((item) => (
-                      <tr key={item.id}>
+                      <tr
+                        key={item.id}
+                        className={selectedPlaybackRows.includes(item) ? 'highlighted-row' : ''}
+                        onClick={(event) => handlePlaybackRowSelect(event, item)}
+                      >
                         <td>{item.id}</td>
                         <td>{item.size}</td>
                         <td>{item.timestamps}</td>
                         <td>{item.streamLength}</td>
                         <td>{item.videoName}</td>
-                        <td>
-                          <input
-                            type="checkbox"
-                            checked={selectedPlaybackRows.includes(item.id)}
-                            onChange={(event) => handlePlaybackRowSelect(event, item.id)}
-                            disabled={selectedPlaybackRows.length > 0 && !selectedPlaybackRows.includes(item.id)}
-                          />
-                        </td>
                         <td>
                           <input
                             type="checkbox"
@@ -232,7 +221,7 @@ const Playback = () => {
                   </button>
                 </div>
                 <div className="refresh-button">
-                  <button onClick={handleRefresh} disabled={selectedRows.length === 0}>
+                  <button onClick={handleRefresh} disabled={selectedRows.length === 0 && selectedPlaybackRows.length === 0}>
                     Refresh
                   </button>
                   <button onClick={handleDownload} disabled={selectedRows.length === 0}>
@@ -246,23 +235,33 @@ const Playback = () => {
           <div className="menu-bar">
             <div className="selection-section">
               <select value={cameraId} onChange={handleCameraChange}>
-               <option value="" disabled selected>Select a camera</option>
+                <option value="" disabled selected>
+                  Select a camera
+                </option>
                 {cameraList.map((camera) => (
                   <option key={camera.id} value={camera.id}>
                     {camera.name}
                   </option>
                 ))}
               </select>
-              <span style={{ textDecoration: 'underline', fontWeight: '700' }}>Choose Playback Date & Time:</span>
-                <div>
-                  <span>Start:</span>
-                    <input type="datetime-local" value={startDate} onChange={handleStartDateChange} /> 
-                </div>
-                <div>
-                  <span>End:</span>
-                  <input type="datetime-local" value={endDate} onChange={handleEndDateChange}  min={startDate}  disabled={!startDate}  />
-                </div>
+              <span style={{ textDecoration: 'underline', fontWeight: '700' }}>
+                Choose Playback Date & Time:
+              </span>
+              <div>
+                <span>Start:</span>
+                <input type="datetime-local" value={startDate} onChange={handleStartDateChange} />
               </div>
+              <div>
+                <span>End:</span>
+                <input
+                  type="datetime-local"
+                  value={endDate}
+                  onChange={handleEndDateChange}
+                  min={startDate}
+                  disabled={!startDate}
+                />
+              </div>
+            </div>
             <div className="button-section">
               <button onClick={handleClearAll}>Clear All</button>
               <button onClick={handleSubmit} disabled={!cameraId || !startDate || !endDate}>
@@ -278,7 +277,6 @@ const Playback = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
