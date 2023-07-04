@@ -118,10 +118,16 @@ const Playback = () => {
   };
 
   const handlePlaybackRowSelect = (event, row) => {
-    setSelectedPlaybackRow(row === selectedPlaybackRow ? null : row); // Toggle selected playback row
-    setSelectedRows([]);
-    setSelectedVideo(row === selectedPlaybackRow ? null : row);
-  };
+    if (selectedPlaybackRow === row) {
+      setSelectedPlaybackRow(null);
+      setSelectedRows([]);
+      setSelectedVideo(null);
+    } else {
+      setSelectedPlaybackRow(row);
+      setSelectedRows([]);
+      setSelectedVideo(row);
+    }
+  };  
 
   const handleDownload = () => {
     const selectedVideos = tableData.filter((item) => selectedRows.includes(item.id));
@@ -174,28 +180,26 @@ const Playback = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tableData
-                    .slice((currentPage - 1) * 5, currentPage * 5)
-                    .map((item) => (
-                      <tr
-                        key={item.id}
-                        className={selectedPlaybackRow === item ? 'highlighted-row' : ''}
-                        onClick={(event) => handlePlaybackRowSelect(event, item)}
-                      >
-                        <td>{item.id}</td>
-                        <td>{item.size}</td>
-                        <td>{item.timestamps}</td>
-                        <td>{item.streamLength}</td>
-                        <td>{item.videoName}</td>
-                        <td>
-                          <input
-                            type="checkbox"
-                            checked={selectedRows.includes(item.id)}
-                            onChange={(event) => handleRowDownload(event, item.id)}
-                          />
-                        </td>
-                      </tr>
-                    ))}
+                {tableData.slice((currentPage - 1) * 5, currentPage * 5).map((item) => (
+                   <tr
+                      key={item.id}
+                      className={selectedPlaybackRow === item ? 'highlighted-row' : ''}
+                      onClick={(event) => handlePlaybackRowSelect(event, item)}
+                   >
+                  <td>{item.id}</td>
+                  <td>{item.size}</td>
+                  <td>{item.timestamps}</td>
+                  <td>{item.streamLength}</td>
+                  <td>{item.videoName}</td>
+                  <td>
+                      <input
+                        type="checkbox"
+                        checked={selectedRows.includes(item.id)}
+                        onChange={(event) => handleRowDownload(event, item.id)}
+                      />
+                    </td>
+                  </tr>
+                ))}
                 </tbody>
               </table>
               <div className="navigation-footer">

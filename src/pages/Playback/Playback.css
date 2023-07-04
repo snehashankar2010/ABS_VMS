@@ -131,8 +131,8 @@
   padding: 1%;
 }
 
-.database-table tr.selected-row {
-  background-color: #00ff00;
+.highlighted-row {
+  background-color: rgb(3, 255, 45);
 }
 
 .navigation-footer {
