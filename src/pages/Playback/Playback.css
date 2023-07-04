@@ -162,23 +162,28 @@
   font-size: 1em;
 }
 
-.refresh-button button {
-  padding: -5%;
+.reset-button button {
+  padding: 5px 15px;
   border: none;
   background-color: #f0f0f0;
   color: gray;
   font-size: 1em;
   cursor: pointer;
+  margin-right: 5px; /* Updated margin-right value */
 }
 
 .download-button button {
-  padding: 15%;
+  padding: 5px 15px;
   border: none;
   background-color: #f0f0f0;
   color: gray;
   font-size: 1em;
   cursor: pointer;
-  margin-left: 10%;
+  margin-left: 5px; /* Updated margin-left value */
+}
+
+.navigation-footer button.highlighted {
+  background-color: rgb(3, 255, 45);
 }
 
 .footer-button-container {
