@@ -1,6 +1,6 @@
 .video-monitoring-system {
   display: flex;
-  height: 88vh;
+  height: 84vh;
 }
 
 .menu-bar {
@@ -10,7 +10,7 @@
   display: flex;
   border-radius: 2%;
   margin-top: -7%;
-  margin-bottom: 1%;
+  margin-bottom: 0%;
   flex-direction: column;
   justify-content: space-between;
   margin-left: auto;
@@ -91,10 +91,6 @@
   background-color: #337ab78c;
 }
 
-.video-monitoring-system {
-  height: 600px;
-}
-
 .video-playback-shell {
   position: absolute;
   top: 10%;
@@ -139,6 +135,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0%;
 }
 
 .page-count {
@@ -166,23 +163,28 @@
   font-size: 1em;
 }
 
-.refresh-button button {
-  padding: -5%;
+.reset-button button {
+  padding: 5px 15px;
   border: none;
   background-color: #f0f0f0;
   color: gray;
   font-size: 1em;
   cursor: pointer;
+  margin-right: 5px; /* Updated margin-right value */
 }
 
 .download-button button {
-  padding: 15%;
+  padding: 5px 15px;
   border: none;
   background-color: #f0f0f0;
   color: gray;
   font-size: 1em;
   cursor: pointer;
-  margin-left: 10%;
+  margin-left: 5px; /* Updated margin-left value */
+}
+
+.navigation-footer button.highlighted {
+  background-color: rgb(3, 255, 45);
 }
 
 .footer-button-container {
@@ -200,7 +202,7 @@
 @media screen and (max-width: 1100px) {
   .video-playback-shell video {
     margin-left: -3%;
-    margin-top: 11%;
+    margin-top: 5%;
   }
 
   .database-table th {

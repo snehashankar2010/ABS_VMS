@@ -13,7 +13,8 @@ const Playback = () => {
   const [endDate, setEndDate] = useState('');
   const [showTable, setShowTable] = useState(false);
   const [selectedRows, setSelectedRows] = useState([]);
-  const [selectedPlaybackRow, setSelectedPlaybackRow] = useState(null); // New state for selected playback row
+  const [selectedPlaybackRow, setSelectedPlaybackRow] = useState(null);
+  const [selectedDownloads, setSelectedDownloads] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [cameraList, setCameraList] = useState([]);
   const [tableData, setTableData] = useState([]);
@@ -81,10 +82,11 @@ const Playback = () => {
     setStartDate('');
     setEndDate('');
     setSelectedRows([]);
-    setSelectedPlaybackRow(null); // Reset selected playback row
+    setSelectedPlaybackRow(null);
     setCurrentPage(1);
     setShowTable(false);
     setSelectedVideo(null);
+    setSelectedDownloads([]); // Reset selected downloads
   };
 
   const handleSubmit = () => {
@@ -103,17 +105,25 @@ const Playback = () => {
     }
   };
 
-  const handleRefresh = () => {
+  const handleReset = () => {
     setSelectedRows([]);
-    setSelectedPlaybackRow(null); // Reset selected playback row
-    setSelectedVideo(null);
+    setSelectedPlaybackRow(null);
+    setSelectedDownloads([]); // Reset selected downloads
   };
 
   const handleRowDownload = (event, row) => {
     if (event.target.checked) {
       setSelectedRows([...selectedRows, row]);
+      setSelectedDownloads([...selectedDownloads, row.id]);
     } else {
       setSelectedRows(selectedRows.filter((selectedRow) => selectedRow !== row));
+      setSelectedDownloads(selectedDownloads.filter((selectedDownload) => selectedDownload !== row.id));
+    }
+
+    if (selectedDownloads.length === 0 && event.target.checked) {
+      setSelectedDownloads([row.id]);
+    } else if (selectedDownloads.length === 1 && !event.target.checked) {
+      setSelectedDownloads([]);
     }
   };
 
@@ -127,14 +137,16 @@ const Playback = () => {
       setSelectedRows([]);
       setSelectedVideo(row);
     }
-  };  
+  };
 
   const handleDownload = () => {
-    const selectedVideos = tableData.filter((item) => selectedRows.includes(item.id));
+    const selectedVideos = tableData.filter((item) => selectedDownloads.includes(item.id));
     selectedVideos.forEach((video) => {
       const url = `/api/download/${video.videoName}`;
       window.open(url, '_blank');
     });
+
+    setSelectedDownloads([]);
   };
 
   return (
@@ -180,26 +192,26 @@ const Playback = () => {
                   </tr>
                 </thead>
                 <tbody>
-                {tableData.slice((currentPage - 1) * 5, currentPage * 5).map((item) => (
-                   <tr
+                  {tableData.slice((currentPage - 1) * 5, currentPage * 5).map((item) => (
+                    <tr
                       key={item.id}
                       className={selectedPlaybackRow === item ? 'highlighted-row' : ''}
                       onClick={(event) => handlePlaybackRowSelect(event, item)}
-                   >
-                  <td>{item.id}</td>
-                  <td>{item.size}</td>
-                  <td>{item.timestamps}</td>
-                  <td>{item.streamLength}</td>
-                  <td>{item.videoName}</td>
-                  <td>
-                      <input
-                        type="checkbox"
-                        checked={selectedRows.includes(item.id)}
-                        onChange={(event) => handleRowDownload(event, item.id)}
-                      />
-                    </td>
-                  </tr>
-                ))}
+                    >
+                      <td>{item.id}</td>
+                      <td>{item.size}</td>
+                      <td>{item.timestamps}</td>
+                      <td>{item.streamLength}</td>
+                      <td>{item.videoName}</td>
+                      <td>
+                        <input
+                          type="checkbox"
+                          checked={selectedRows.includes(item)}
+                          onChange={(event) => handleRowDownload(event, item)}
+                        />
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               <div className="navigation-footer">
@@ -221,11 +233,15 @@ const Playback = () => {
                     &gt;|
                   </button>
                 </div>
-                <div className="refresh-button">
-                  <button onClick={handleRefresh} disabled={selectedRows.length === 0 && !selectedPlaybackRow}>
-                    Refresh
+                <div className="reset-button">
+                  <button onClick={handleReset} disabled={selectedRows.length === 0 && !selectedPlaybackRow}>
+                    Reset
                   </button>
-                  <button onClick={handleDownload} disabled={selectedRows.length === 0}>
+                  <button
+                    className={selectedDownloads.length > 0 ? 'highlighted' : ''}
+                    onClick={handleDownload}
+                    disabled={selectedDownloads.length === 0}
+                  >
                     Download
                   </button>
                 </div>
