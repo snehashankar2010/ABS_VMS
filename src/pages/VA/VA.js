@@ -2,14 +2,12 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
 import "./VA.css";
-import ReactPlayer from 'react-player';
 
-const AddStream = () => {
+const VA = () => {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
-  const [newVideoSource, setNewVideoSource] = useState(""); 
 
-
+  // Check if the user is already authenticated
   useEffect(() => {
     const loggedInUser = localStorage.getItem("authenticated");
     if (loggedInUser === "true") {
@@ -19,10 +17,12 @@ const AddStream = () => {
     }
   }, [navigate]);
 
+  // Handle navigation to different pages
   const handleNavigation = (path) => {
     navigate(path);
   };
 
+  // Handle user logout
   const handleLogout = () => {
     localStorage.setItem("authenticated", false);
     setAuthenticated(false);
@@ -43,8 +43,10 @@ const AddStream = () => {
       <div className="body-text">
         <div className="header">
           <h1>Video Analytics</h1>
-        </div>        
+        </div>
+        {/* Add here Additional content related to video analytics */}
       </div>
+        {/* Footer content */}
       <div className="footer">
         <div className="copyright">
           &copy; 2023 Arcturus Business Solutions
@@ -54,4 +56,4 @@ const AddStream = () => {
   );
 };
 
-export default AddStream;
+export default VA;

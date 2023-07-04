@@ -3,16 +3,15 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
 import "./AddStream.css";
 import VideoSourcesContext from "../VideoFeed/VideoSourcesContext";
-import ReactPlayer from 'react-player';
 
 const AddStream = () => {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
-  const [newVideoSource, setNewVideoSource] = useState(""); 
   const { addVideoSource } = useContext(VideoSourcesContext);
   const [deviceInfo, setDeviceInfo] = useState({name: '',ip: '', username: '', password: '', port: ''}); 
   const [devices, setDevices] = useState({});
 
+  // Check if the user is already authenticated
   useEffect(() => {
     const loggedInUser = localStorage.getItem("authenticated");
     if (loggedInUser === "true") {
@@ -22,6 +21,7 @@ const AddStream = () => {
     }
   }, [navigate]);
 
+  // Add video source to the context and navigate to the dashboard
   const handleAddVideoSource = () => {
     if (devices && devices.ip && devices.port) {
       addVideoSource(devices);
@@ -29,10 +29,7 @@ const AddStream = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    setNewVideoSource(e.target.value);
-  };
-
+  // Handle input change for device information via  context 
   const handleDeviceInput = (e) => {
     const { name, value } = e.target;
     setDeviceInfo((prevDeviceInfo) => ({
@@ -40,7 +37,8 @@ const AddStream = () => {
       [name]: value,
     }));
   };
-  
+
+  // Connect to the device and fetch information
   const handleAddVideoSrc = () => {
     fetch('http://localhost:7000/initial-setup', {
       method: 'POST',
@@ -63,10 +61,12 @@ const AddStream = () => {
     });
   };
 
+  // Handle navigation to different pages
   const handleNavigation = (path) => {
     navigate(path);
   };
 
+  // Handle user logout
   const handleLogout = () => {
     localStorage.setItem("authenticated", false);
     setAuthenticated(false);
@@ -76,7 +76,7 @@ const AddStream = () => {
   return (
     <div>
       <div className="sidebar">
-      <img src={logo}></img>
+        <img src={logo}></img>
         <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
         <button onClick={() => handleNavigation("/playback")}>Playback</button>
         <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
@@ -87,57 +87,30 @@ const AddStream = () => {
       <div className="body-text">
         <div className="header">
           <h1>Add Stream</h1>
-        </div>        
+        </div>
+         {/* Input fields for device information */}
         <div className="content">
-        <input
-            type="text"
-            name="name"
-            value={deviceInfo.name}
-            onChange={handleDeviceInput}
-            placeholder="Camera Name"
-          />
-          <input
-            type="text"
-            name="ip"
-            value={deviceInfo.ip}
-            onChange={handleDeviceInput}
-            placeholder="Device IP Address"
-          />
-          <input
-            type="text"
-            name="username"
-            value={deviceInfo.username}
-            onChange={handleDeviceInput}
-            placeholder="Username"
-          />
-          <input
-            type="password"
-            name="password"
-            value={deviceInfo.password}
-            onChange={handleDeviceInput}
-            placeholder="Password"
-          />
-          <input
-            type="number"
-            name="port"
-            value={deviceInfo.port}
-            onChange={handleDeviceInput}
-            placeholder="Port"
-          />
+          <input type="text" name="name" value={deviceInfo.name} onChange={handleDeviceInput} placeholder="Camera Name" />
+          <input type="text" name="ip" value={deviceInfo.ip} onChange={handleDeviceInput} placeholder="Device IP Address" />
+          <input type="text" name="username" value={deviceInfo.username} onChange={handleDeviceInput} placeholder="Username" />
+          <input type="password" name="password" value={deviceInfo.password} onChange={handleDeviceInput} placeholder="Password" />
+          <input type="number" name="port" value={deviceInfo.port} onChange={handleDeviceInput} placeholder="Port" />
         </div>
         <div className="add">
           <button onClick={handleAddVideoSrc}>Connect</button>
-        </div>   
+        </div>
         <br></br>
         <div className="add">
           <button onClick={handleAddVideoSource}>Add Video Source</button>
         </div>
+        {/* Display connected device information */}
         {devices.ip && devices.port && (
           <div className="connected">
             <h2>Connected to Device: {devices.ip}:{devices.port}</h2>
           </div>
         )}
       </div>
+      {/* Footer content */}
       <div className="footer">
         <div className="copyright">
           &copy; 2023 Arcturus Business Solutions
