@@ -10,7 +10,7 @@
   display: flex;
   border-radius: 2%;
   margin-top: -7%;
-  margin-bottom: 0%;
+  margin-bottom: 1%;
   flex-direction: column;
   justify-content: space-between;
   margin-left: auto;
@@ -109,7 +109,7 @@
   flex-direction: column;
   height: 25%;
   margin-top: auto;
-  margin-bottom: 0;
+  margin-bottom: 0%;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -128,14 +128,13 @@
 }
 
 .highlighted-row {
-  background-color: rgb(3, 255, 45);
+  background-color: #337ab7d9;
 }
 
 .navigation-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0%;
 }
 
 .page-count {
@@ -201,8 +200,8 @@
 
 @media screen and (max-width: 1100px) {
   .video-playback-shell video {
-    margin-left: -3%;
-    margin-top: 5%;
+    margin-left: -7.5%;
+    margin-top: 11%;
   }
 
   .database-table th {

@@ -11,23 +11,28 @@ const Dashboard = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const { videoSources, deleteVideoSource } = useContext(VideoSourcesContext);
 
+  // Check if the user is authenticated
   useEffect(() => {
     const loggedInUser = localStorage.getItem("authenticated");
     if (loggedInUser === "true") {
       setAuthenticated(true);
     } else {
+      // If not authenticated, redirect to the login page
       navigate("/login", { replace: true });
     }
   }, [navigate]);
 
+  // Handle navigation to different pages
   const handleNavigation = (path) => {
     navigate(path);
   };
 
+  // Handle deleting a video source from context
   const handleDeleteVideo = (index, src) => {
     deleteVideoSource(index);
   };
 
+  // Handle user logout
   const handleLogout = () => {
     localStorage.setItem("authenticated", false);
     setAuthenticated(false);
@@ -36,6 +41,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      {/* Sidebar */}
       <div className="sidebar">
         <img src={logo} alt="Logo" />
         <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
@@ -43,13 +49,16 @@ const Dashboard = () => {
         <button onClick={() => handleNavigation("/add-stream")}>Add Stream</button>
         <button onClick={() => handleNavigation("/video-analytics")}>Video Analytics</button>
         <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
-        <button onClick={handleLogout}>Logout</button>        
+        <button onClick={handleLogout}>Logout</button>
       </div>
+
+      {/* Main content */}
       <div className="body-text">
         <div className="header">
-          <h1>Dashboard</h1><br></br>
+          <h1>Dashboard</h1>
         </div>
         <div className="video-wrapper">
+          {/* Render video feeds */}
           {videoSources.map((src, index) => (
             <div className="video-pos" key={index}>
               <VideoFeed devices={src} onDelete={() => handleDeleteVideo(index, src)} />
@@ -57,6 +66,8 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
+
+      {/* Footer */}
       <div className="footer">
         <div className="copyright">
           &copy; 2023 Arcturus Business Solutions

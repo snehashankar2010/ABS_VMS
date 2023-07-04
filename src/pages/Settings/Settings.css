@@ -5,7 +5,7 @@
   width: 52%;
   background-color: #9bd3ff30; 
   padding:0.2%;
-  margin-left:19%;
+  margin-left:18%;
   margin-top:-1%;
   border-radius: 5px;
 }
@@ -28,7 +28,7 @@
 
 .video-controls {
   position: absolute;
-  top: 12%;
+  top: 6%;
   right: 2%;
   display: flex;
   height: 85%;
@@ -90,7 +90,7 @@
 }
 
 .dropdown p {
-  font-size: 1.3em; 
+  font-size: 1.2em; 
   font-family:monaco, monospace;
   margin-top: 2%;
   margin-bottom: 0.7%;
@@ -139,8 +139,7 @@
 .dropdown .preset-input {
   width: 310px;
   height: 100px;
-  border-radius: 5px;
-  margin-left: 10px;
+  border-radius: 5px; 
   font-size: 1em;
   font-family:monaco, monospace;
   margin:5px; 
@@ -154,7 +153,7 @@
 }
 
 .preset-input button {
-  width: 120px;
+  width: 110px;
   height: 40px;
   font-size: 0.85em;
    font-family:monaco, monospace;
@@ -164,7 +163,10 @@
   cursor: pointer;
   margin: 2%;
 }
-
+.preset-display {
+  max-height: 20px; 
+  overflow-y: auto;
+}
 @media screen and (max-width: 1100px) {
   .row {
     width: 50%;
@@ -178,19 +180,19 @@
   }
   .ID-controls .button-group button {
     width: 70px;
-    height: 40px;
+    height: 30px;
     font-size: 1.2em;
     margin: 0.5%;
   }
  .dropdown .preset-input {
     width:260px; 
-     font-size: 1em;
+    height:80px;
   }
   .dropdown p {
    font-size: 1.1em;
   }
   .range-input .slider {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .preset-input button {
     width:110px; 

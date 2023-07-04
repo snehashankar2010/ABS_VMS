@@ -1,28 +1,28 @@
 import React, { useRef, useEffect, useState } from 'react';
 import videojs from 'video.js';
-import "./StreamFeed.css";
 import 'video.js/dist/video-js.css';
+import './StreamFeed.css';
 
 const StreamFeed = ({ src }) => {
+  // Create a reference to the video element
   const videoRef = useRef(null);
+  
+  // Use state to keep track of the Video.js player instance
   const [player, setPlayer] = useState(null);
-  const [showStream, setShowStream] = useState(false);
 
   useEffect(() => {
-    // make sure Video.js player is only initialized once
+    // Initialize the Video.js player when the component mounts
     if (!player) {
       const videoElement = videoRef.current;
       if (!videoElement) return;
 
-      setPlayer(
-        videojs(videoElement, {}, () => {
-          console.log('player is ready');
-        })
-      );
+      const newPlayer = videojs(videoElement, {}, () => {
+        console.log('Player is ready');
+      });
+      setPlayer(newPlayer);
     }
-  }, [videoRef]);
 
-  useEffect(() => {
+    // Dispose the Video.js player when the component unmounts
     return () => {
       if (player) {
         player.dispose();
@@ -32,10 +32,10 @@ const StreamFeed = ({ src }) => {
 
   return (
     <div className="onvif-video-feed video-feed">
-     
-        <video className="onvif-video-js video-js" ref={videoRef} controls autoPlay>
-          <source src={src} type="application/x-mpegURL" />
-        </video>
+      {/* Render the video element and attach the video reference */}
+      <video className="onvif-video-js video-js" ref={videoRef} controls autoPlay>
+        <source src={src} type="application/x-mpegURL" />
+      </video>
     </div>
   );
 };
