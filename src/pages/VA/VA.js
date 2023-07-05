@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
 import "./VA.css";
 
+var viewportHeight = window.innerHeight;
+console.log("Viewport height: " + viewportHeight + "px"); // To view the height of the viewport and make CSS adjustments
+
 const VA = () => {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
