@@ -44,7 +44,23 @@ const VA = () => {
         <div className="header">
           <h1>Video Analytics</h1>
         </div>
-        {/* Add here Additional content related to video analytics */}
+        {/* User Header */}
+        <div className="row">
+          <h2>User Header</h2>
+          {/* Add your content for the User Header row */}
+        </div>
+
+        {/* Selection Bar */}
+        <div className="row">
+          <h2>Selection Bar</h2>
+          {/* Add your content for the Selection Bar row */}
+        </div>
+
+        {/* Headings Bar */}
+        <div className="row">
+          <h2>Headings Bar</h2>
+          {/* Add your content for the Headings Bar row */}
+        </div>
       </div>
         {/* Footer content */}
       <div className="footer">
