@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    height: 94.3vh;
+  }
+  
+  .sidebar {
+    width: 12%; /* Adjust the width as per your requirements */
+    min-height: 94.3vh; /* Make the sidebar take the full height of the viewport */
+    background-color: #337ab7c9;
+    padding: 1.3%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    left: 0;
+    top: 0;
+  }
+  
+  .body-text {
+    margin-left: 17%; /* Adjust the margin as per your requirements */
+    text-align: left;
+    background-color: #fff;
+  }
+  
+  body {
+    background: radial-gradient(#ffffff 50%, #d1e6f0);
+    min-height: 94.3vh;
+  }
+  
+  .header {
+    width: 70%;
+  }
+  
+  .footer .copyright {
+    margin-left: auto; /* Move the element to the right */
+    margin-bottom: 0%;
+  }
+  
+  .row {
+    margin-bottom: 20%;
+  }
+  
+  .user-header {
+    background-color: #e0e0e0;
+    height: 50%;
+    height: 94.3vh;
+  }
+  
+  .selection-bar {
+    background-color: #d0d0d0;
+    height: 20%;
+  }
+  
+  .headings-bar {
+    background-color: #c0c0c0;
+    height: 20%;
+  }
+  
