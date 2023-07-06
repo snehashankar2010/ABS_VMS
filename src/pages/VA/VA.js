@@ -43,24 +43,24 @@ const VA = () => {
         <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
-      <div className="body-text">
-        <div className="header">
+      <div className="va-body-text">
+        <div className="va-header">
           <h1>Video Analytics</h1>
         </div>
         {/* User Header */}
-        <div className="row">
+        <div className="va-row">
           <h2>User Header</h2>
           {/* Add your content for the User Header row */}
         </div>
 
         {/* Selection Bar */}
-        <div className="row">
+        <div className="va-row">
           <h2>Selection Bar</h2>
           {/* Add your content for the Selection Bar row */}
         </div>
 
         {/* Headings Bar */}
-        <div className="row">
+        <div className="va-row">
           <h2>Headings Bar</h2>
           {/* Add your content for the Headings Bar row */}
         </div>
