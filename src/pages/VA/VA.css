@@ -1,4 +1,4 @@
-.container {
+.va-container {
   display: flex;
   flex-direction: column;
   height: 94.3vh;
@@ -15,7 +15,7 @@
   text-align: left;
 }
 
-.body-text {
+.va-body-text {
   margin-left: 17%;
   text-align: left;
   background-color: #fff;
@@ -26,35 +26,36 @@ body {
   min-height: 94.3vh;
 }
 
-.header {
+.va-header {
   width: 70%;
 }
 
-.row {
+.va-row {
   margin-bottom: 1.5%;
-  flex-grow: 1;
+  flex-grow:1;
 }
 
-.user-header,
-.selection-bar,
-.headings-bar {
+.va-user-header,
+.va-selection-bar,
+.va-headings-bar {
   width: 100%;
 }
 
-.user-header {
+.va-user-header {
   background-color: #e0e0e0;
   display: flex;
   align-items: center;
 }
 
-.selection-bar {
+.va-selection-bar {
   background-color: #d0d0d0;
   display: flex;
   align-items: center;
 }
 
-.headings-bar {
+.va-headings-bar {
   background-color: #c0c0c0;
   display: flex;
   align-items: center;
 }
+
