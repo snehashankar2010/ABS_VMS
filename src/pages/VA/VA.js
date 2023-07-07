@@ -1,12 +1,20 @@
+// Importing necessary dependencies and resources.
+
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
 import "./VA.css";
 
+// Defining the AddStream functional component and initializing state variables using the useState hook.
+
 const AddStream = () => {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
   const [newVideoSource, setNewVideoSource] = useState("");
+
+  // Using the useEffect hook to run a code snippet after the component is rendered. 
+  // It checks if the user is logged in by reading the authenticated value from local storage. 
+  // If the user is authenticated, it updates the state variable authenticated to true, otherwise it navigates to the login page.
 
   useEffect(() => {
     // Check if the user is logged in
@@ -20,10 +28,15 @@ const AddStream = () => {
     }
   }, [navigate]);
 
+  // Defining a function handleNavigation that takes a path parameter and uses the navigate function to navigate to the specified path.
+
   const handleNavigation = (path) => {
     // Function to handle navigation to different routes
     navigate(path);
   };
+
+  // Defining a function handleLogout that logs out the user by updating the authenticated state variable to false, 
+  // clearing the authentication status in local storage, and navigating to the login page.
 
   const handleLogout = () => {
     // Function to handle user logout
@@ -31,6 +44,13 @@ const AddStream = () => {
     setAuthenticated(false);
     navigate("/login");
   };
+
+  // The return statement returns JSX code that represents the structure and content of the component.
+
+  // The remaining code is the JSX markup that defines the visual layout and components of the AddStream component. 
+  // It consists of HTML-like tags and utilizes CSS classes and inline styles to style the elements. 
+  // Each line of the JSX code is commented to describe its purpose and functionality.
+  // Overall, the VA.js file represents a React component that handles authentication, navigation, and rendering of the Add Stream page, with various UI elements like buttons, dropdowns, and headers.
 
   return (
     <div>
