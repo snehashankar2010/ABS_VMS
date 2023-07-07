@@ -74,6 +74,7 @@
   
   .header12 .menu {
     font-weight: 600;
+    margin-right: auto; /* Add this line */
   }
   
   .notification-icon12,
@@ -239,13 +240,4 @@
     font-family: Fira Sans;
     font-weight: 900;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
