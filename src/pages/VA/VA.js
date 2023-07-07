@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
 import "./VA.css";
 
-var viewportHeight = window.innerHeight;
-console.log("Viewport height: " + viewportHeight + "px"); // To view the height of the viewport and make CSS adjustments
-
-const VA = () => {
+const AddStream = () => {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
+  const [newVideoSource, setNewVideoSource] = useState("");
 
-  // Check if the user is already authenticated
+
   useEffect(() => {
     const loggedInUser = localStorage.getItem("authenticated");
     if (loggedInUser === "true") {
@@ -20,12 +18,10 @@ const VA = () => {
     }
   }, [navigate]);
 
-  // Handle navigation to different pages
   const handleNavigation = (path) => {
     navigate(path);
   };
 
-  // Handle user logout
   const handleLogout = () => {
     localStorage.setItem("authenticated", false);
     setAuthenticated(false);
@@ -43,29 +39,64 @@ const VA = () => {
         <button onClick={() => handleNavigation("/stream-settings")}>ONVIF Settings</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
-      <div className="va-body-text">
-        <div className="va-header">
-          <h1>Video Analytics</h1>
+      <div class="container12">
+        <div class="header12">
+          <div class="left12">CAMERA RESULT / DEPARTMENT / CAMERA NAME</div>
+          <div class="notification-icon12">
+            <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/Bell.png" />
+          </div>
+          <div class="profile12">
+            <img src="" />
+          </div>
+          <div class="menu12">NAME SURNAME</div>
         </div>
-        {/* User Header */}
-        <div className="va-row">
-          <h2>User Header</h2>
-          {/* Add your content for the User Header row */}
-        </div>
+        <div class="row112">
+          <div class="dropdown12">
+            <select>
+              <option value="department" selected>Department</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+          </div>
+          <div class="dropdown12">
+            <select>
+              <option value="department" selected>Selection of Violation:</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+          </div>
+          <div class="date-chooser12">
+            <div class="calendar-icon12">
+              <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/Calender.png" alt="Calendar Icon" />
+              <span>Duration:</span>
+            </div>
+            <input type="text" id="duration-picker" />
+          </div>
 
-        {/* Selection Bar */}
-        <div className="va-row">
-          <h2>Selection Bar</h2>
-          {/* Add your content for the Selection Bar row */}
+          <button class="download-btn12">
+            <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/download.png" />
+          </button>
+          <button class="search-btn12">Search</button>
         </div>
-
-        {/* Headings Bar */}
-        <div className="va-row">
-          <h2>Headings Bar</h2>
-          {/* Add your content for the Headings Bar row */}
+        <div class="row212">
+          <span style={{width: "140px;"}}>HEADING</span>
+          <span style={{width: "170px;"}}>HEADING</span>
+          <span style={{width: "110px;"}}>HEADING</span>
+          <span style={{width: "260px;"}}>HEADING</span>
+          <span style={{width: "300px;"}}>HEADING</span>
+          <span style={{width: "10px;"}}>HEADING</span>
+        </div>
+        <div class="row-scrollable12">
+          <div class="rows12">
+            <span style={{width: "140px;"}}></span>
+            <span style={{width: "170px;"}}></span>
+            <span style={{width: "110px;"}}></span>
+            <span style={{width: "260px;"}}></span>
+            <span style={{width: "300px;"}}></span>
+            <span style={{width: "10px;"}}></span>
+          </div>
         </div>
       </div>
-        {/* Footer content */}
       <div className="footer">
         <div className="copyright">
           &copy; 2023 Arcturus Business Solutions
@@ -75,4 +106,4 @@ const VA = () => {
   );
 };
 
-export default VA;
+export default AddStream;
