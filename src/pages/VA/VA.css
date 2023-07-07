@@ -10,233 +10,312 @@ body {
   background-color: #F7F8FA;
 } */
 
-.container12 {
-  overflow-y: hidden; /* Hide vertical overflow within the container */
-}
+/*  This section is commented out using /* */
+/*  It contains CSS rules targeting the HTML element, but they are currently disabled.
+    These rules set the height of the HTML element to 100% and the body element to 100% with some additional styling. */
 
-.sidebar12 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 36px 0px 300px; /* Padding for the sidebar content */
-  gap: 10px;
-  position: fixed;
-  width: 230px;
-  height: 768px;
-  left: 0;
-  top: 3px;
-  background: #486BAB;
-  color: #FFFFFF;
-  z-index: 1;
-}
 
-.logo12,
-.nav-link12 {
-  color: #FFFFFF;
-  font-family: Fira Sans;
-  width: 100%;
-  padding: 15px;
-}
-
-.nav-link12 {
-  text-decoration: none;
-}
-
-.nav-link12:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.nav-link12:last-child {
-  margin-bottom: 300px; /* Margin for the last navigation link */
-}
-
-.header12 {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 750px;
-  padding: 12px 20px;
-  background: #FFFFFF;
-  color: #486BAB;
-  font-family: Fira Sans;
-  position: absolute;
-  top: 3px;
-  width: calc(100% - 270px);
-  left: 230px;
-  height: 45px;
-}
-
-.header12 .left {
-  color: rgba(58, 75, 104, 0.8);
-  font-size: 15px;
-  font-family: Fira Sans;
-}
-
-.header12 .menu {
-  font-weight: 600;
-  margin-right: auto; /* Align the menu to the right */
-}
-
-.notification-icon12,
-.profile12 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #F7F8FA;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.notification-icon12 {
-  right: 220px;
-}
-
-.profile12 {
-  right: 20px;
-  width: 50px;
-  height: 50px;
-}
-
-.notification-icon12 img,
-.profile12 img {
-  object-fit: center;
-}
-
-.row112 {
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
-  gap: 20px;
-  position: absolute;
-  top: 70px;
-  left: 230px;
-  width: calc(100% - 310px);
-  z-index: 1;
-}
-
-.dropdown12 select {
-  padding: 8px;
-  border-color: rgba(58, 75, 104, 0.2);
-  font-family: Fira Sans;
-  font-size: 16px;
-  color: rgba(58, 75, 104, 1);
-  width: 200px;
-}
-
-.date-chooser12 {
-  position: relative;
-  margin-left: 200px;
-}
-
-.date-chooser12 .calendar-icon12 {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #486BAB;
-}
-
-.date-chooser12 .calendar-icon12 img {
-  width: 18px;
-  height: 18px;
-}
-
-.date-chooser12 .calendar-icon12 span {
-  font-family: Fira Sans;
-  font-size: 15px;
-  color: rgba(58, 75, 104, 0.6);
-  padding: 10px;
-}
-
-.date-chooser12 input {
-  padding: 8px 8px 8px 60px;
-  font-family: Fira Sans;
-  text-align: justify;
-  text-align-last: center;
-  font-size: 16px;
-  color: #486BAB;
-  border-color: rgba(58, 75, 104, 0.2);
-  width: 300px;
-}
-
-.row112 button {
-  font-family: Fira Sans;
-  background-color: #486BAB;
-  color: #FFFFFF;
-  width: 120px;
-  height: 40px;
-  opacity: 1;
-  font-weight: Medium;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 4px;
-  border-color: #486BAB;
-  overflow: hidden;
-}
-
-.row112 button:hover {
-  background-color: #3C5B82;
-}
-
-.row112 .download-btn {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
-  width: 40px;
-  height: 40px;
-}
-
-.row112 .download-btn:hover {
-  background-color: #F7F8FA;
-}
-
-.row212 {
-  display: flex;
-  align-items: center;
-  padding: 15px 40px;
-  gap: 30px;
-  background: #FFFFFF;
-  position: absolute;
-  top: 150px;
-  left: 250px;
-  width: calc(100% - 350px);
-  height: 20px;
-}
-
-.row212 span {
-  color: rgb(34, 56, 97);
-  font-family: Fira Sans;
-  font-weight: 900;
-}
-
-.row-scrollable12 {
-  position: relative;
-  height: 100%;
-  overflow-y: auto;
-  position: absolute;
-  top: 220px;
-  left: 250px;
-}
-
-.row-scrollable12 .rows {
-  display: flex;
-  align-items: center;
-  padding: 15px 40px;
-  gap: 30px;
-  background: #FFFFFF;
-  height: 60px;
-}
-
-.row-scrollable12 .rows span {
-  flex-basis: 140px;
-  flex-grow: 1;
-  color: rgb(34, 56, 97);
-  font-family: Fira Sans;
-  font-weight: 900;
-}
+    .container12 {
+      overflow-y: hidden; /* Hide vertical overflow within the container */
+    }
+    
+    /*  This section targets an element with the class "container12".
+        It sets the overflow-y property to "hidden", which hides the vertical overflow within the container. */
+    
+    
+    .sidebar12 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 36px 0px 300px; /* Padding for the sidebar content */
+      gap: 10px;
+      position: fixed;
+      width: 230px;
+      height: 768px;
+      left: 0;
+      top: 3px;
+      background: #486BAB;
+      color: #FFFFFF;
+      z-index: 1;
+    }
+    
+    /*  This section targets an element with the class "sidebar12".
+        It styles a sidebar by setting various properties such as display, flex-direction, align-items, padding, width, height, background color, and color.
+        The sidebar is given a fixed position on the left side of the page and has a width of 230 pixels. */
+    
+    .logo12,
+    .nav-link12 {
+      color: #FFFFFF;
+      font-family: Fira Sans;
+      width: 100%;
+      padding: 15px;
+    }
+    
+    /*  This section targets elements with the classes "logo12" and "nav-link12".
+        It styles the logo and navigation links inside the sidebar.
+        The styles include setting the color, font-family, width, and padding for these elements. */ 
+    
+    .nav-link12 {
+      text-decoration: none;
+    }
+    
+    .nav-link12:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    /*  This section targets the "nav-link12" class when the element is being hovered over.
+        It sets the background color to create a hover effect for the navigation links. */
+    
+    
+    .nav-link12:last-child {
+      margin-bottom: 300px; /* Margin for the last navigation link */
+    }
+    
+    /*  This section targets the last child element with the class "nav-link12" within its container.
+        It sets a bottom margin to create spacing at the bottom of the navigation links. */
+    
+    
+    .header12 {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 750px;
+      padding: 12px 20px;
+      background: #FFFFFF;
+      color: #486BAB;
+      font-family: Fira Sans;
+      position: absolute;
+      top: 3px;
+      width: calc(100% - 270px);
+      left: 230px;
+      height: 45px;
+    }
+    
+    /*  This section targets an element with the class "header12".
+        It styles a header section by setting properties like display, flex-shrink, align-items, gap, padding, 
+        background color, color, font-family, position, top, width, left, and height. */
+    
+    .header12 .left {
+      color: rgba(58, 75, 104, 0.8);
+      font-size: 15px;
+      font-family: Fira Sans;
+    }
+    
+    /*  This section targets elements with the class "left" inside the "header12" element.
+        It styles the left-aligned content within the header. */
+    
+    .header12 .menu {
+      font-weight: 600;
+      margin-right: auto; /* Align the menu to the right */
+    }
+    
+    /*  This section targets elements with the class "menu" inside the "header12" element.
+        It styles the menu content within the header, including setting the font weight and aligning it to the right using margin-right: auto. */
+    
+    .notification-icon12,
+    .profile12 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #F7F8FA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /*  This section targets elements with the classes "notification-icon12" and "profile12".
+        It styles notification icons and profile icons.
+        These icons are positioned absolutely and have specific width, height, border-radius, background color, and alignment properties. */
+    
+    .notification-icon12 {
+      right: 220px;
+    }
+    
+    
+    .profile12 {
+      right: 20px;
+      width: 50px;
+      height: 50px;
+    }
+    
+    .notification-icon12 img,
+    .profile12 img {
+      object-fit: center;
+    }
+    
+    .row112 {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      gap: 20px;
+      position: absolute;
+      top: 70px;
+      left: 230px;
+      width: calc(100% - 310px);
+      z-index: 1;
+    }
+    
+    /*  This section targets elements with the class "row112".
+        It styles rows by setting properties like display, align-items, padding, position, top, left, width, and z-index. */
+    
+    .dropdown12 select {
+      padding: 8px;
+      border-color: rgba(58, 75, 104, 0.2);
+      font-family: Fira Sans;
+      font-size: 16px;
+      color: rgba(58, 75, 104, 1);
+      width: 200px;
+    }
+    
+    /*  This section targets a <select> element within an element with the class "dropdown12".
+        It styles the dropdown select box, including padding, border-color, font-family, font-size, and color. */
+    
+    .date-chooser12 {
+      position: relative;
+      margin-left: 200px;
+    }
+    
+    /*  This section targets an element with the class "date-chooser12".
+        It styles a date chooser component by setting properties like position, margin-left, and relative positioning. */
+    
+    .date-chooser12 .calendar-icon12 {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #486BAB;
+    }
+    
+    
+    
+    .date-chooser12 .calendar-icon12 img {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .date-chooser12 .calendar-icon12 span {
+      font-family: Fira Sans;
+      font-size: 15px;
+      color: rgba(58, 75, 104, 0.6);
+      padding: 10px;
+    }
+    
+    .date-chooser12 input {
+      padding: 8px 8px 8px 60px;
+      font-family: Fira Sans;
+      text-align: justify;
+      text-align-last: center;
+      font-size: 16px;
+      color: #486BAB;
+      border-color: rgba(58, 75, 104, 0.2);
+      width: 300px;
+    }
+    
+    .row112 button {
+      font-family: Fira Sans;
+      background-color: #486BAB;
+      color: #FFFFFF;
+      width: 120px;
+      height: 40px;
+      opacity: 1;
+      font-weight: Medium;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 4px;
+      border-color: #486BAB;
+      overflow: hidden;
+    }
+    
+    /*  This section targets button elements within the "row112" class.
+        It styles buttons with properties like font-family, background-color, color, width, height, opacity, 
+        font-weight, font-size, text-align, border-radius, and border-color.*/
+    
+    .row112 button:hover {
+      background-color: #3C5B82;
+    }
+    
+    /*  This section targets button elements within the "row112" class when they are being hovered over.
+        It sets the background color to create a hover effect for the buttons. */
+    
+    .row112 .download-btn {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+      width: 40px;
+      height: 40px;
+    }
+    
+    /*  This section targets elements with the class "download-btn" within the "row112" class.
+        It styles download buttons by setting properties like background-color, border-color, width, and height. */
+    
+    .row112 .download-btn:hover {
+      background-color: #F7F8FA;
+    }
+    
+    /*  This section targets elements with the class "download-btn" within the "row112" class when they are being hovered over.
+        It sets the background color to create a hover effect for the download buttons. */
+    
+    .row212 {
+      display: flex;
+      align-items: center;
+      padding: 15px 40px;
+      gap: 30px;
+      background: #FFFFFF;
+      position: absolute;
+      top: 150px;
+      left: 250px;
+      width: calc(100% - 350px);
+      height: 20px;
+    }
+    
+    /*  This section targets elements with the class "row212".
+        It styles rows by setting properties like display, align-items, padding, background, position, top, left, width, and height. */
+    
+    .row212 span {
+      color: rgb(34, 56, 97);
+      font-family: Fira Sans;
+      font-weight: 900;
+    }
+    
+    /*  This section targets <span> elements within the "row212" class.
+        It styles the text within these spans by setting the color, font-family, and font-weight. */
+    
+    .row-scrollable12 {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      position: absolute;
+      top: 220px;
+      left: 250px;
+    }
+    
+    /*  This section targets an element with the class "row-scrollable12".
+      It styles a scrollable row section by setting properties like position, height, and overflow-y */
+    
+    .row-scrollable12 .rows {
+      display: flex;
+      align-items: center;
+      padding: 15px 40px;
+      gap: 30px;
+      background: #FFFFFF;
+      height: 60px;
+    }
+    
+    /*  This section targets elements with the class "rows" within the "row-scrollable12" class.
+        It styles rows within the scrollable section by setting properties like display, align-items, padding, gap, background, and height. */
+    
+    .row-scrollable12 .rows span {
+      flex-basis: 140px;
+      flex-grow: 1;
+      color: rgb(34, 56, 97);
+      font-family: Fira Sans;
+      font-weight: 900;
+    }
+    
+    /*  This section targets <span> elements within the "rows" class inside the "row-scrollable12" class.
+        It styles the text within these spans by setting the flex properties, color, font-family, and font-weight. */
