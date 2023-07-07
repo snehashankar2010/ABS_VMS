@@ -43,7 +43,7 @@ const AddStream = () => {
         <div class="header12">
           <div class="left12">CAMERA RESULT / DEPARTMENT / CAMERA NAME</div>
           <div class="notification-icon12">
-            <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/Bell.png" />
+            <img src="./assets/Bell.png" />
           </div>
           <div class="profile12">
             <img src="" />
