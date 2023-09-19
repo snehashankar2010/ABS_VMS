@@ -87,7 +87,7 @@ body {
       position: absolute;
       top: 3px;
       width: calc(100% - 270px);
-      left: 230px;
+      left: 220px;
       height: 45px;
     }
     
@@ -113,7 +113,7 @@ body {
         It styles the menu content within the header, including setting the font weight and aligning it to the right using margin-right: auto. */
     
     .notification-icon12,
-    .profile12 {
+    .profile12{
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -132,11 +132,10 @@ body {
     
     .notification-icon12 {
       right: 220px;
-    }
-    
+    } 
     
     .profile12 {
-      right: 20px;
+      right: 165px;
       width: 50px;
       height: 50px;
     }

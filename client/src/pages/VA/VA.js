@@ -3,6 +3,9 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/imgs/logo.png";
+import bell from "../../assets/icon/Bell.png";
+import cal from "../../assets/icon/Calendar.png";
+import download from "../../assets/icon/download.png";
 import "./VA.css";
 
 // Defining the AddStream functional component and initializing state variables using the useState hook.
@@ -67,7 +70,7 @@ const AddStream = () => {
         <div class="header12">
           <div class="left12">CAMERA RESULT / DEPARTMENT / CAMERA NAME</div> {/* Display camera information */}
           <div class="notification-icon12">
-            <img src="./assets/Bell.png" /> {/* Render the notification icon */}
+            <img src={bell} /> {/* Render the notification icon */}
           </div>
           <div class="profile12">
             <img src="" /> {/* Render the user's profile image */}
@@ -91,14 +94,14 @@ const AddStream = () => {
           </div>
           <div class="date-chooser12">
             <div class="calendar-icon12">
-              <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/Calender.png" alt="Calendar Icon" /> {/* Render the calendar icon */}
+              <img src={cal} alt="Calendar Icon" /> {/* Render the calendar icon */}
               <span>Duration:</span> {/* Display the duration label */}
             </div>
             <input type="text" id="duration-picker" /> {/* Input field for selecting duration */}
           </div>
 
           <button class="download-btn12">
-            <img src="/Users/mac/Desktop/VMS/react/frontend-backend/ABS_VMS/src/assets/icon/download.png" /> {/* Render the download icon */}
+            <img src={download} /> {/* Render the download icon */}
           </button>
           <button class="search-btn12">Search</button> {/* Button for search */}
         </div>
